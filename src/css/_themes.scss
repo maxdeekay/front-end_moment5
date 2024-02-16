@@ -1,0 +1,13 @@
+@use "base";
+
+/* LIGHT THEME MEDIA QUERY */
+@media (prefers-color-scheme: light) {
+    nav, article img, #open-nav, #container { background-color: base.$nav-color-light; }
+    body, .active { background-color: base.$bg-color-light; }
+    h1, h2 { color: base.$accent-color-light; }
+    article { background-color: base.$article-color-light; }
+    nav a { color: base.$text-color-light; }
+    nav a:hover, .active { color: base.$nav-link-color-light; }
+    #open nav:hover { background-color: base.$button-hover-color-light; }
+    p, #container * { color: base.$text-color-light };
+}

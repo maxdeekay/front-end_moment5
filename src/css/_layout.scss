@@ -1,0 +1,75 @@
+@use "base";
+
+html { font-family: "Nunito", sans-serif; }
+
+body {
+    background-color: base.$bg-color;
+    margin-left: 0.5em;
+}
+
+::selection {
+    background: base.$accent-color;
+}
+
+main {
+    max-width: 100%;
+    padding-right: 1.5em;
+}
+
+nav {
+    background-color: base.$nav-color;
+    width: 5em;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: none;
+
+    * { font-size: 14px; }
+
+    ul {
+        margin-block-start: 0;
+        margin-block-end: 0;
+        padding-inline-start: 0;
+    }
+
+    li {
+        list-style-type: none;
+        height: 80px;
+        width: 100%;
+        position: relative;
+    }
+
+    a {
+        text-decoration: none;
+        color: base.$nav-link-color;
+        height: 100%;
+        display: block;
+        text-align: center;
+        font-weight: bold;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2px;
+
+        &:hover {
+            color: base.$text-color;
+        }
+    }
+
+    img {
+        width: 100%;
+        max-width: 30px;
+    }
+
+    .material-symbols-outlined {
+        font-size: 32px;
+    }
+}
+
+@media (width > 500px) {
+    nav { display: block !important; }
+    body { margin-left: 5.5em !important; }
+    main { max-width: 25em; }
+}

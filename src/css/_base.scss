@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Single+Day&display=swap');
+
+/* DARK THEME COLORS !STANDARD */
+$nav-color: rgb(25, 25, 25);
+$bg-color: lighten($nav-color, 10%);
+$article-color: lighten($nav-color, 15%);
+$accent-color: rgb(255, 105, 79);
+$text-color: white;
+$nav-link-color: darken(white, 30%);
+$button-hover-color: lighten($nav-color, 20%);
+
+/* LIGHT THEME COLORS */
+$nav-color-light: lighten($nav-color, 50%);
+$bg-color-light: lighten($nav-color, 70%);
+$article-color-light: lighten($nav-color, 80%);
+$accent-color-light: rgb(255, 0, 0);
+$text-color-light: black;
+$nav-link-color-light: lighten(black, 30%);
+$button-hover-color-light: lighten($nav-color, 40%);

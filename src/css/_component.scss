@@ -1,0 +1,70 @@
+@use "base";
+
+h1 {
+    color: base.$accent-color;
+    font-size: 1.5em;
+}
+
+h2 {
+    color: base.$accent-color;
+    font-size: 1.3em;
+    margin-block-start: 0;
+    margin-block-end: 0.1em;
+    margin-inline-start: 0;
+}
+
+%text-style { color: base.$text-color; }
+
+@mixin box($width, $height, $radius: false, $radius-amount: 10px) {
+    width: $width;
+    height: $height;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+
+    @if $radius {
+        border-radius: $radius-amount;
+    }
+}
+
+p { @extend %text-style; line-height: 1.3em; }
+.active { @extend %text-style; background-color: base.$bg-color; }
+
+article {
+    @include box(100%, auto, true);
+    
+    background-color: base.$article-color;
+    margin: 0.5em 1em 0.5em 0;
+    padding: 0.5em;
+
+    h1, h2 { margin: 0; }
+    p { margin: 0.5em 0 0 0; }
+
+    img {
+        @include box(100%, auto, true);
+        border: 1px solid base.$nav-color;
+    }
+}
+
+#open-nav {
+    @extend %text-style;
+    @include box(50px, 40px, true);
+
+    background-color: base.$nav-color;
+    font-weight: normal;
+    text-align: center;
+    line-height: 40px;
+    position: fixed;
+    top: 5px;
+    right: 5px;
+    display: none;
+    font-size: 2em;
+    z-index: 5;
+
+    &:hover {
+        cursor: pointer;
+        background-color: base.$button-hover-color;
+    }
+}
+
+@media (width <= 500px) {
+    #open-nav { display: block; }
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.scss">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <script src="js/main.js" type="module"></script>
+    <title>Moment 4</title>
+</head>
+<body>
+    <a href="#">
+        <span id="open-nav" class="material-symbols-outlined">menu</span>
+    </a>
+
+    <nav>
+        <ul>
+            <li><a href="index.html"><span class="material-symbols-outlined">home</span><span>index</span></a></li>
+            <li><a href="sass.html" class="active"><img src="images/scss.svg" alt="SASS"><span>SASS</span></a></li>
+            <li><a href="animering.html"><span class="material-symbols-outlined">animation</span><span>Animering</span></a></li>
+            <li><a href="#">page 4</a></li>
+            <li><a href="#">page 5</a></li>
+        </ul>
+    </nav>
+    <main>
+        <article>
+            <h1>För- och nackdelar med SASS</h1>
+            <p>
+                Det som känns absolut mest användbart med SASS är att använda sig av mixin, extend och variabler (även fast jag använde mig mest av CSS custom properties i detta arbete) för att kunna återanvända mycket kod och väldigt enkelt uppdatera sidan i framtiden.
+            </p>
+            <p>
+                Att kunna nestla regler underlättar både skrivandet och läsandet av koden avsevärt. En trevlig bonus när koden ligger i fallande indenteringar är att man enkelt kan minimera större kodblock i VSC och dölja dem.
+            </p>
+            <p>    
+                Att kunna göra koden mer modulär och dela upp den i olika partials underlättar verkligen struktureringen och gör det lättare att hålla isär och hitta tillbaka till delar av koden.
+            </p>
+            <p>
+                En annan fördel med SASS är alla inbyggda funktioner och matematiska operationer som låter oss arbeta direkt i stilmallen istället för att behöva gå till en extern webbplats för att ändra en färgton.
+            </p>
+            <p>
+                Det känns inte som det finns överdrivet många nackdelar med SASS, men något som slagit mig är alla oändliga möjligheter som finns när det kommer till arbetet med funktioner, variabler, mixins etc. Det kan vara otydligt exakt vilken metod som är bäst att använda i varje unikt fall och det kan vara svårt att hänga med i någon annans kod full med funktioner, variabler och mixins, även fast den är väldigt funktionell och flexibel.
+            </p>
+        </article>
+
+        <article>
+            <h1>Arbetet med en CSS-preprocessor</h1>
+            <p>
+                Det var väldigt smidigt att komma igång med SASS, det gick till och med lite för bra i början så jag fick gå tillbaka och strukturera om några saker, bland annat hur jag skötte färgteman. Jag försökte lagra all information i SASS-variabler men det slog mig att dessa inte går att förändra i en media query då dom inte existerar längre efter kompilering, så jag fick byta till CSS custom properties vilket verkar fungera bra. Ser fram emot att fortsätta arbeta med SASS och lära mig mer om vad som är best practice i alla olika fall.
+            </p>
+        </article>
+    </main>
+</body>
+</html>
