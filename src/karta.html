@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.scss">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
-    <script src="js/main.js" type="module"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDepr514y6-2HX0TFZd-ECtzxHJ-D8Cjgg&callback=initMap&libraries=&v=weekly"></script>
+    <script src="js/main.js" type="text/javascript"></script>
+    <script src="js/map.js" type="text/javascript"></script>
     <title>Karta</title>
 </head>
 <body>
@@ -22,8 +24,11 @@
             <li><a href="karta.html" class="active"><span class="material-symbols-outlined">map</span><span>Karta</span></a></li>
         </ul>
     </nav>
-    <main>
-       
-    </main>
+    
+    <div id="map"></div>
+    <script>
+        test();
+        abc();
+    </script>
 </body>
 </html>

@@ -5,25 +5,23 @@ window.onload = async () => {
     const url = "https://studenter.miun.se/~mallar/dt211g/";
     const response = await fetch(url);
 
+    chartStyling();
+
     if (response.ok) {
         let data = await response.json();
         
-        drawBarChart(data);
+        drawChart(filterCourses(data, "Kurs", 6), "bar");
+        drawChart(filterCourses(data, "Program", 5), "pie");
     } else {
         console.log("ERROR: " + response.statusText);
     }
 }
 
-function drawBarChart(data) {
-    const courses = data.filter(course => course.type === "Kurs").sort((a, b) => b.applicantsTotal - a.applicantsTotal).slice(0, 6);
-    
-    Chart.defaults.font.size = 16;
-    Chart.defaults.color = "white";
-
+function drawChart(courses, chartType) {    
     new Chart(
-    document.getElementById("bar-chart"),
+    document.getElementById(chartType),
     {
-        type: "bar",
+        type: chartType,
         options: {
             indexAxis: "y",
             plugins: {
@@ -42,4 +40,13 @@ function drawBarChart(data) {
         }
     }
     );
+}
+
+function filterCourses(data, type, length) {
+    return data.filter(course => course.type === type).sort((a, b) => b.applicantsTotal - a.applicantsTotal).slice(0, length);
+}
+
+function chartStyling() {
+    Chart.defaults.font.size = 16;
+    Chart.defaults.color = "white";
 }

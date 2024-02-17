@@ -19,3 +19,7 @@ window.onload = () => {
         }
     }
 }
+
+function abc() {
+    console.log("ABC");
+}
