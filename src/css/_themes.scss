@@ -2,12 +2,12 @@
 
 /* LIGHT THEME MEDIA QUERY */
 @media (prefers-color-scheme: light) {
-    nav, article img, #open-nav, #container { background-color: base.$nav-color-light; }
+    nav, article img, #open-nav, #container, #map-input { background-color: base.$nav-color-light; }
     body, .active { background-color: base.$bg-color-light; }
     h1, h2 { color: base.$accent-color-light; }
-    article { background-color: base.$article-color-light; }
-    nav a { color: base.$text-color-light; }
+    article, #map-input>input[type=text], #map-input>button { background-color: base.$article-color-light; }
+    nav a, #map-input>input[type=text], #map-input>button { color: base.$text-color-light; }
     nav a:hover, .active { color: base.$nav-link-color-light; }
-    #open nav:hover { background-color: base.$button-hover-color-light; }
+    #open nav:hover, #map-input>button:hover { background-color: base.$button-hover-color-light; }
     p, #container * { color: base.$text-color-light };
 }
