@@ -20,6 +20,10 @@ window.onload = async () => {
         title: "Stockholm",
     });
     
+    document.getElementById("search-input").addEventListener("keypress", (e) => {
+        if (e.key === "Enter") search(map, marker, document.getElementById("search-input").value);
+    });
+
     document.getElementById("search-button").onclick = () => {
         search(map, marker, document.getElementById("search-input").value);
     }
