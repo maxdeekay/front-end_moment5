@@ -17,7 +17,7 @@ window.onload = async () => {
     }
 }
 
-function drawChart(courses, chartType) {    
+function drawChart(courses, chartType) {
     new Chart(
     document.getElementById(chartType),
     {
@@ -27,7 +27,7 @@ function drawChart(courses, chartType) {
             indexAxis: "y",
             plugins: {
                 legend: {
-                    display: false
+                    display: labelStatus = (chartType != "bar") ? true : false
                 }
             }
         },
