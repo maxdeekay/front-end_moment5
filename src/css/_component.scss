@@ -65,14 +65,14 @@ article {
     }
 }
 
-#chart-container {
-    max-width: 30em;
-}
+#bar-chart-container { width: 800px; max-width: 99%; }
+#pie-chart-container { max-width: 30em; }
 
 #map-container {
     max-width: 50em;
     height: 40em;
     padding: 1em;
+    user-select: none;
 }
 
 #map-input {

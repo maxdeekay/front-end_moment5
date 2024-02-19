@@ -1,41 +1,47 @@
 "use strict";
-// GOOGLE API KEY
-// AIzaSyDepr514y6-2HX0TFZd-ECtzxHJ-D8Cjgg
 
 window.onload = async () => {
-    const stockholm = { lat: 59.3293, lng: 18.0686 };
+    // default position set to Stockholm
+    const position = { lat: 59.3293, lng: 18.0686 };
 
     const { Map } = await google.maps.importLibrary("maps");
     const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
 
     const map = new Map(document.getElementById("map"), {
         zoom: 10,
-        center: stockholm,
+        center: position,
         mapId: "MAP_ID",
     });
 
     const marker = new AdvancedMarkerElement({
         map,
-        position: stockholm,
+        position: position,
         title: "Stockholm",
     });
     
-    document.getElementById("search-input").addEventListener("keypress", (e) => {
-        if (e.key === "Enter") search(map, marker, document.getElementById("search-input").value);
+    // search and de-focus input with enter
+    const searchInput = document.getElementById("search-input");
+    searchInput.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") {
+            search(map, marker, searchInput.value);
+            searchInput.blur();
+        }
     });
 
+    // search with button 
     document.getElementById("search-button").onclick = () => {
         search(map, marker, document.getElementById("search-input").value);
     }
 
+    // user position
     document.getElementById("user-position").onclick = () => {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition((position) => {
-                stockholm.lat = position.coords.latitude;
-                stockholm.lng = position.coords.longitude;
+                position.lat = position.coords.latitude;
+                position.lng = position.coords.longitude;
                 
-                map.setCenter(stockholm);
-                marker.position = stockholm;
+                map.setCenter(position);
+                marker.position = position;
                 marker.title = "Din position";
             });
         }

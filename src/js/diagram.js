@@ -23,6 +23,7 @@ function drawChart(courses, chartType) {
     {
         type: chartType,
         options: {
+            categoryPercentage: 1,
             indexAxis: "y",
             plugins: {
                 legend: {
@@ -31,7 +32,10 @@ function drawChart(courses, chartType) {
             }
         },
         data: {
-            labels: courses.map(row => row.name),
+            labels: courses.map(row => {
+                if (chartType === "bar" && row.name.length > 32) return [[row.name.slice(0,32)], row.name.slice(32)];
+                return row.name;
+            }),
             datasets: [
                 {
                     data: courses.map(row => row.applicantsTotal),
@@ -49,4 +53,6 @@ function filterCourses(data, type, length) {
 function chartStyling() {
     Chart.defaults.font.size = 16;
     Chart.defaults.color = "white";
+
+    if (window.matchMedia("(prefers-color-scheme: light").matches) Chart.defaults.color = "black";
 }

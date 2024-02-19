@@ -17,6 +17,7 @@ main {
 }
 
 nav {
+    user-select: none;
     background-color: base.$nav-color;
     width: 5em;
     height: 100vh;
