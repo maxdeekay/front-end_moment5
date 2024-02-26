@@ -27,7 +27,7 @@ function drawChart(courses, chartType) {
             indexAxis: "y",
             plugins: {
                 legend: {
-                    display: legendStatus = (chartType != "bar") ? true : false
+                    display: false
                 }
             }
         },
